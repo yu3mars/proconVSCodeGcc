@@ -1,0 +1,35 @@
+{
+    "configurations": [
+        {
+            "name": "MinGW",
+            "intelliSenseMode": "clang-x64",
+            "compilerPath": "C:/mingw64/bin/gcc.exe",
+            "includePath": [
+                "${workspaceFolder}",
+                "c:/mingw/lib/gcc/mingw32/6.3.0/include/c++",
+                "c:/mingw/lib/gcc/mingw32/6.3.0/include/c++/mingw32",
+                "c:/mingw/lib/gcc/mingw32/6.3.0/include/c++/backward",
+                "c:/mingw/lib/gcc/mingw32/6.3.0/include",
+                "c:/mingw/include",
+                "c:/mingw/lib/gcc/mingw32/6.3.0/include-fixed"
+            ],
+            "defines": [],
+            "browse": {
+                "path": [
+                    "${workspaceFolder}",
+                    "c:/mingw/lib/gcc/mingw32/6.3.0/include/c++",
+                    "c:/mingw/lib/gcc/mingw32/6.3.0/include/c++/mingw32",
+                    "c:/mingw/lib/gcc/mingw32/6.3.0/include/c++/backward",
+                    "c:/mingw/lib/gcc/mingw32/6.3.0/include",
+                    "c:/mingw/include",
+                    "c:/mingw/lib/gcc/mingw32/6.3.0/include-fixed"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            },
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}
