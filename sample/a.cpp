@@ -4,6 +4,9 @@ using namespace std;
 using ll = long long;
 using ld = long double;
 
+#define REP(i,n) for(int i=0, i##_len=(n); i<i##_len; ++i)
+#define all(x) (x).begin(),(x).end()
+
 int main()
 {
     printf("Hello\n");
