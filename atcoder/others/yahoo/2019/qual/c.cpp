@@ -11,20 +11,27 @@ using pii = pair<int, int>;
 
 int dx4[4] = {1,0,-1,0}, dy4[4] = {0,1,0,-1};
 
-ll n;
-int dfs(ll x, bool b3,bool b5, bool b7){
-    if(x>n) return 0;
-    int ret=0;
-    if(b3&&b5&&b7) ret++;
-    ret += dfs(x*10+3,true,b5,b7);
-    ret += dfs(x*10+5,b3,true,b7);
-    ret += dfs(x*10+7,b3,b5,true);
-    return ret;
-}
-
 int main(){
-    cin>>n;
-    ll ans = dfs(0,false,false,false);
+    ll k,a,b,ans=1;
+    cin>>k>>a>>b;
+    if(b-a<2 || k<=a)    //kankin shinai
+    {
+        ans = k+1;
+    }
+    else
+    {
+        ans=a;
+        k=k-a+1;
+        if(k%2==1)
+        {
+            ans++;
+            k--;
+        }
+        k/=2;
+        ll plus = b-a;
+        ans+=plus*k;
+    }
+
     cout<<ans<<endl;
     return 0;
 }

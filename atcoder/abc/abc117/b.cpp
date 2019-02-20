@@ -11,20 +11,28 @@ using pii = pair<int, int>;
 
 int dx4[4] = {1,0,-1,0}, dy4[4] = {0,1,0,-1};
 
-ll n;
-int dfs(ll x, bool b3,bool b5, bool b7){
-    if(x>n) return 0;
-    int ret=0;
-    if(b3&&b5&&b7) ret++;
-    ret += dfs(x*10+3,true,b5,b7);
-    ret += dfs(x*10+5,b3,true,b7);
-    ret += dfs(x*10+7,b3,b5,true);
-    return ret;
-}
-
 int main(){
+    int n;
     cin>>n;
-    ll ans = dfs(0,false,false,false);
-    cout<<ans<<endl;
+    vector<int> l(n);
+    int sum =0;
+    int ma=0;
+
+    for(int i = 0; i < n; i++)
+    {
+        cin>>l[i];
+        sum+=l[i];
+        ma=max(ma,l[i]);
+    }
+    if(sum > ma*2)
+    {
+        cout<<"Yes"<<endl;
+    }
+    else
+    {
+        cout<<"No"<<endl;
+    }
+    
+
     return 0;
 }
