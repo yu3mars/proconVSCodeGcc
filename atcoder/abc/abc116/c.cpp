@@ -11,34 +11,53 @@ using pii = pair<int, int>;
 
 int dx4[4] = {1,0,-1,0}, dy4[4] = {0,1,0,-1};
 
-int main(){
-    int n,m,ans=0;
-    cin>>n>>m;
-    vector<int> x(m),d(m-1);
-    
-    for(int i = 0; i < m; i++)
-    {
-        cin>>x[i];
-    }
-    if(n>=m)
-    {
-        ans = 0;
-    }
-    else
-    {
-        sort(all(x));
-        for(int i = 0; i < m-1; i++)
-        {
-            d[i]=x[i+1]-x[i];
-        }
-        sort(all(d));
-        reverse(all(d));
-        ans = x[m-1] - x[0];
-        for(int i = 0; i < n-1; i++)
-        {
-            ans-=d[i];
-        }
+int h[110];
 
+
+
+int main(){
+    int n,ans=0;
+    cin>>n;
+    for(int i = 0; i < 110; i++)
+    {
+        h[i]=0;
+    }
+    
+    for(int i = 0; i < n; i++)
+    {
+        cin>>h[i];
+    }
+    while(true){
+        bool cont = false;
+        bool end=true;
+        for(int i = 0; i < n; i++)
+        {
+            if(cont)
+            {
+                if(h[i]==0)
+                {
+                    cont=false;
+                }
+                else
+                {
+                    h[i]--;
+                }                
+            }
+            else
+            {
+                if(h[i]>0)
+                {
+                    ans++;
+                    cont=true;
+                    end=false;
+                    h[i]--;
+                }
+            }            
+        }
+        if(end)
+        {
+            break;
+        }
     }
     
 

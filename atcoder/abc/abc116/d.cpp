@@ -4,6 +4,7 @@ using namespace std;
 using ll = long long;
 using ld = long double;
 using pii = pair<int, int>;
+using pll = pair<ll, ll>;
 
 #define REP(i,n) for(int i=0, i##_len=(n); i<i##_len; ++i)
 #define all(x) (x).begin(),(x).end()
@@ -12,58 +13,51 @@ using pii = pair<int, int>;
 int dx4[4] = {1,0,-1,0}, dy4[4] = {0,1,0,-1};
 
 int main(){
-    ll n,k,x=0,ans=0;
+    ll k,n,ans=0,osum=0, tmp=0;
     cin>>n>>k;
-    vector<ll> a(n);
-    for(ll i = 0; i < n; i++)
+    vector<pll> v(n);   //oishisa, neta
+    priority_queue<pll> pqall;
+    priority_queue<pll, vector<pll>, greater<pll>> pqkaburi;
+    unordered_set<ll> us;
+    for(int i = 0; i < n; i++)
     {
-        cin>>a[i];
+        ll t,d;
+        cin>>t>>d;
+        v[i]=make_pair(d,t);
+        pqall.push(v[i]);
+    }
+    for(int i = 0; i < k; i++)
+    {
+        pll top = pqall.top();
+        pqall.pop();
+        if(us.find(top.second)==us.end())
+        {
+            us.insert(top.second);
+            osum+=top.first;
+        }
+        else
+        {
+            pqkaburi.push(top);
+            osum+=top.first;
+        }
+    }
+    tmp=osum+us.size()*us.size();
+    ans=max(ans,tmp);
+    while(us.size()<k && pqall.size()>0){
+        pll top = pqall.top();
+        pqall.pop();
+        if(us.find(top.second)==us.end())
+        {
+            us.insert(top.second);
+            osum+=top.first;
+            pll del = pqkaburi.top();
+            pqkaburi.pop();
+            osum-=del.first;
+            tmp=osum+us.size()*us.size();
+            ans=max(ans,tmp);
+        }
     }
     
-    ll bit=1;
-    while(bit>0 && bit<=k){
-        ll cnt =0;
-        for(ll i = 0; i < n; i++)
-        {
-            if((a[i] & bit)>0)
-            {
-                cnt++;
-            }
-        }
-        if(cnt*2<n)
-        {
-            x+=bit;
-        }
-
-        bit*=2;
-    }
-
-    //cout<<x<<endl;//
-
-    if(x>k)
-    {
-        ll diff = x-k;
-        ll bit2=1;
-        while(bit2<diff) 
-        {
-            bit2*=2;
-        }
-        while(bit2<=x)
-        {
-            if((x&bit2)>0)
-            {
-                x-=bit2;
-                break;
-            }
-            bit2*=2;
-        }
-    }
-
-    for(ll i = 0; i < n; i++)
-    {
-        ans+=(x^a[i]);
-    }
-
     cout<<ans<<endl;
     return 0;
 }
