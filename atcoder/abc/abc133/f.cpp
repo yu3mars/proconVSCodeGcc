@@ -14,17 +14,6 @@ int dx4[4] = {1,0,-1,0}, dy4[4] = {0,1,0,-1};
 
 int main()
 {
-    ll n,m;
-    cin>>n>>m;
-    vector<ll> s(n),t(m);
-    for (int i = 0; i < n; i++)
-    {
-        cin>>s[i];
-    }
-    for (int i = 0; i < m; i++)
-    {
-        cin>>t[i];
-    }
     
 
     return 0;

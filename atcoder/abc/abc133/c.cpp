@@ -14,18 +14,22 @@ int dx4[4] = {1,0,-1,0}, dy4[4] = {0,1,0,-1};
 
 int main()
 {
-    ll n,m;
-    cin>>n>>m;
-    vector<ll> s(n),t(m);
-    for (int i = 0; i < n; i++)
+    ll ans=2020;
+    ll l,r;
+    cin>>l>>r;
+    ll a,b;
+    a = l%2019;
+    b = (min(l+2018,r)) % 2019;
+    if(b<a) b+=2019;
+    for (int i = a; i <= b; i++)
     {
-        cin>>s[i];
+        for (int j = a; j < i; j++)
+        {
+            ll tmp = (i*j)%2019;
+            ans=min(ans,tmp);
+        }
     }
-    for (int i = 0; i < m; i++)
-    {
-        cin>>t[i];
-    }
-    
+    cout<<ans<<endl;
 
     return 0;
 }

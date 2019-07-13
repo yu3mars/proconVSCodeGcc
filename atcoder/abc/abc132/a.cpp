@@ -14,18 +14,26 @@ int dx4[4] = {1,0,-1,0}, dy4[4] = {0,1,0,-1};
 
 int main()
 {
-    ll n,m;
-    cin>>n>>m;
-    vector<ll> s(n),t(m);
-    for (int i = 0; i < n; i++)
+    string s;
+    cin>>s;
+    int ls[26];
+    int cnt=0;
+    for (int i = 0; i < 26; i++)
     {
-        cin>>s[i];
-    }
-    for (int i = 0; i < m; i++)
-    {
-        cin>>t[i];
+        ls[i]=0;
     }
     
+    for (int i = 0; i < 4; i++)
+    {
+        ls[s[i]-'A']++;
+    }
+    for (int i = 0; i < 26; i++)
+    {
+        if(ls[i]==2) cnt++;
+    }
+    
+    if(cnt==2) cout<<"Yes"<<endl;
+    else cout<<"No"<<endl;
 
     return 0;
 }
