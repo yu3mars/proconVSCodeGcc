@@ -40,13 +40,14 @@ int main()
 {
     ll n;
     cin>>n;
-    vector<pll> xy;
+    vector<pll> xy(n);
     for (int i = 0; i < n; i++)
     {
         ll xx,yy;
         cin>>xx>>yy;
         xy[i]=make_pair(xx,yy);
     }
+    sort(all(xy));
     pll dp[110][9];
     for (int i = 0; i < 110; i++)
     {
