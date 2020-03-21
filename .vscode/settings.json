@@ -60,6 +60,14 @@
         "typeinfo": "cpp",
         "utility": "cpp",
         "valarray": "cpp",
-        "climits": "cpp"
+        "climits": "cpp",
+        "algorithm": "cpp",
+        "iterator": "cpp",
+        "map": "cpp",
+        "memory_resource": "cpp",
+        "random": "cpp",
+        "regex": "cpp",
+        "set": "cpp",
+        "string": "cpp"
     }
 }
