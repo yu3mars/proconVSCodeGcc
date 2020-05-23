@@ -36,3 +36,6 @@
 
 # Output Text
 *.txt
+
+# Ignore Folder
+ignore/
