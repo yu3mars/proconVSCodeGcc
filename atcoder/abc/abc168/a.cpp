@@ -16,8 +16,19 @@ int dx4[4] = {1,0,-1,0}, dy4[4] = {0,1,0,-1};
 
 int main()
 {
-    int a,b,c;
-    cin>>a>>b>>c;
+    int n;
+    cin>>n;
+    n%=10;
+    string s="hon";
+    if(n==3)
+    {
+        s="bon";
+    }
+    else if(n==0||n==1||n==6||n==8)
+    {
+        s="pon";
+    }
+    cout<<s<<endl;
     
     return 0;
 }

@@ -16,8 +16,16 @@ int dx4[4] = {1,0,-1,0}, dy4[4] = {0,1,0,-1};
 
 int main()
 {
-    int a,b,c;
-    cin>>a>>b>>c;
+    ll x;
+    cin>>x;
+    ll cnt=0;
+    ll money=100;
+    while (money<x)
+    {
+        money = (ll)(money*1.01);
+        cnt++;
+    }
+    cout<<cnt<<endl;
     
     return 0;
 }

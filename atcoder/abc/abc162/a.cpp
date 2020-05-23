@@ -16,8 +16,20 @@ int dx4[4] = {1,0,-1,0}, dy4[4] = {0,1,0,-1};
 
 int main()
 {
-    int a,b,c;
-    cin>>a>>b>>c;
+    int n;
+    cin>>n;
+    bool ok=false;
+    while(n>0)
+    {
+        if(n%10==7)
+        {
+            ok=true;
+            break;
+        }
+        n/=10;
+    }
+    if(ok) cout<<"Yes"<<endl;
+    else cout<<"No"<<endl;
     
     return 0;
 }

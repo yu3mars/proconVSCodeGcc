@@ -16,8 +16,9 @@ int dx4[4] = {1,0,-1,0}, dy4[4] = {0,1,0,-1};
 
 int main()
 {
-    int a,b,c;
-    cin>>a>>b>>c;
+    int n;
+    cin>>n;
+    
     
     return 0;
 }

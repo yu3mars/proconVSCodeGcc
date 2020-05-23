@@ -16,8 +16,21 @@ int dx4[4] = {1,0,-1,0}, dy4[4] = {0,1,0,-1};
 
 int main()
 {
-    int a,b,c;
-    cin>>a>>b>>c;
+    ll n;
+    cin>>n;
+    vector<ll> a(n);
+    for (int i = 0; i < n-1; i++)
+    {
+        int k;
+        cin>>k;
+        k--;
+        a[k]++;
+    }
+    for (int i = 0; i < n; i++)
+    {
+        cout<<a[i]<<endl;
+    }
+    
     
     return 0;
 }

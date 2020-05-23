@@ -16,8 +16,18 @@ int dx4[4] = {1,0,-1,0}, dy4[4] = {0,1,0,-1};
 
 int main()
 {
-    int a,b,c;
-    cin>>a>>b>>c;
+    int k,a,b;
+    cin>>k>>a>>b;
+    int tmp=0;
+    bool ok=false;
+    while (tmp<=b)
+    {
+        tmp+=k;
+        if(a<=tmp && tmp <=b) ok=true;
+    }
+    if(ok) cout<<"OK"<<endl;
+    else cout<<"NG"<<endl;
+    
     
     return 0;
 }

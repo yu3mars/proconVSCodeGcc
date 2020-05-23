@@ -14,23 +14,13 @@ int dx4[4] = {1,0,-1,0}, dy4[4] = {0,1,0,-1};
 int main(){
     ll n,h,w,ans=0;
     cin>>n>>h>>w;
-    vector<ll> a(n),b(n);
     
     for(int i = 0; i < n; i++)
     {
-        cin>>a[i];
+        ll a,b;
+        cin>>a>>b;
+        if(a>=h && b>=w) ans++;
     }
-    
-    for(int i = 0; i < n; i++)
-    {
-        cin>>b[i];
-    }
-    
-    for(int i = 0; i < n; i++)
-    {
-        if(a[i]<=h && b[i]<=w) ans++;
-    }
-    
     
     cout<<ans<<endl;
     return 0;

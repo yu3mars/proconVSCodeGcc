@@ -16,8 +16,13 @@ int dx4[4] = {1,0,-1,0}, dy4[4] = {0,1,0,-1};
 
 int main()
 {
-    int a,b,c;
-    cin>>a>>b>>c;
+    ll x;
+    cin>>x;
+    ll ans=0;
+    ans+=(x/500)*1000;
+    x%=500;
+    ans+=(x/5)*5;
+    cout<<ans<<endl;
     
     return 0;
 }

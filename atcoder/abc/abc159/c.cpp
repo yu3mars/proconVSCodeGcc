@@ -16,8 +16,11 @@ int dx4[4] = {1,0,-1,0}, dy4[4] = {0,1,0,-1};
 
 int main()
 {
-    int a,b,c;
-    cin>>a>>b>>c;
+    std::cout << std::fixed;
+    std::cout << std::setprecision(10);
+    double l;
+    cin>>l;
+    cout<<pow(l/3.0,3)<<endl;
     
     return 0;
 }

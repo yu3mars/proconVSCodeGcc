@@ -16,8 +16,9 @@ int dx4[4] = {1,0,-1,0}, dy4[4] = {0,1,0,-1};
 
 int main()
 {
-    int a,b,c;
-    cin>>a>>b>>c;
+    int n,m;
+    cin>>n>>m;
+    cout<<n*(n-1)/2+m*(m-1)/2<<endl;
     
     return 0;
 }

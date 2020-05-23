@@ -16,8 +16,11 @@ int dx4[4] = {1,0,-1,0}, dy4[4] = {0,1,0,-1};
 
 int main()
 {
-    int a,b,c;
-    cin>>a>>b>>c;
+    std::cout << std::fixed;
+    std::cout << std::setprecision(6);
+    double d;
+    cin>>d;
+    cout<<2.0*d*M_PI<<endl;
     
     return 0;
 }

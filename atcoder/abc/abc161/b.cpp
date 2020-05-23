@@ -16,8 +16,25 @@ int dx4[4] = {1,0,-1,0}, dy4[4] = {0,1,0,-1};
 
 int main()
 {
-    int a,b,c;
-    cin>>a>>b>>c;
+    ll n,m;
+    cin>>n>>m;
+    vector<ll> a(n);
+    ll sm=0;
+    for (int i = 0; i < n; i++)
+    {
+        cin>>a[i];
+        sm+=a[i];
+    }
+    sort(all(a));
+    reverse(all(a));
+    if(a[m-1]*4*m>=sm)
+    {
+        cout<<"Yes"<<endl;
+    }
+    else
+    {
+        cout<<"No"<<endl;
+    }
     
     return 0;
 }

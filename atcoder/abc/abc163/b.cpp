@@ -16,8 +16,16 @@ int dx4[4] = {1,0,-1,0}, dy4[4] = {0,1,0,-1};
 
 int main()
 {
-    int a,b,c;
-    cin>>a>>b>>c;
+    ll n,m,sum=0;
+    cin>>n>>m;
+    vector<ll> a(m);
+    for (int i = 0; i < m; i++)
+    {
+        cin>>a[i];
+        sum+=a[i];
+    }
+    if(n>=sum) cout<<n-sum<<endl;
+    else cout<<-1<<endl;
     
     return 0;
 }

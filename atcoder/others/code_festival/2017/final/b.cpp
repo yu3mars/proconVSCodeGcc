@@ -4,8 +4,6 @@ using namespace std;
 using ll = long long;
 using ld = long double;
 using pii = pair<int, int>;
-using pll = pair<ll, ll>;
-
 
 #define REP(i,n) for(int i=0, i##_len=(n); i<i##_len; ++i)
 #define all(x) (x).begin(),(x).end()
@@ -13,11 +11,19 @@ using pll = pair<ll, ll>;
 
 int dx4[4] = {1,0,-1,0}, dy4[4] = {0,1,0,-1};
 
-
 int main()
 {
-    int a,b,c;
-    cin>>a>>b>>c;
+    string s;
+    cin>>s;
+    int n=s.size();
+    vector<int> c(3);
+    for (int i = 0; i < n; i++)
+    {
+        c[s[i]-'a']++;
+    }
+    sort(all(c));
+    if(c[2]-c[0]>1) cout<<"NO"<<endl;
+    else cout<<"YES"<<endl;
     
     return 0;
 }

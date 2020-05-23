@@ -16,8 +16,13 @@ int dx4[4] = {1,0,-1,0}, dy4[4] = {0,1,0,-1};
 
 int main()
 {
-    int a,b,c;
-    cin>>a>>b>>c;
+    ll n,m;
+    cin>>n>>m;
+    for (int i = 0; i < m; i++)
+    {
+        cout<<i+1<<" "<<2*m-i<<endl;
+    }
+    
     
     return 0;
 }

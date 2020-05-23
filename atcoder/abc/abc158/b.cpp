@@ -16,8 +16,12 @@ int dx4[4] = {1,0,-1,0}, dy4[4] = {0,1,0,-1};
 
 int main()
 {
-    int a,b,c;
-    cin>>a>>b>>c;
+    ll n,a,b;
+    cin>>n>>a>>b;
+    ll ans=(n/(a+b))*a;
+    n%=(a+b);
+    ans+=min(a,n);
+    cout<<ans<<endl;
     
     return 0;
 }

@@ -16,8 +16,19 @@ int dx4[4] = {1,0,-1,0}, dy4[4] = {0,1,0,-1};
 
 int main()
 {
-    int a,b,c;
-    cin>>a>>b>>c;
+    ll k,n;
+    cin>>k>>n;
+    vector<ll> a(n);
+    for (int i = 0; i < n; i++)
+    {
+        cin>>a[i];
+    }
+    ll mi=k+a[0]-a[n-1];
+    for (int i = 0; i < n-1; i++)
+    {
+        mi=max(mi, a[i+1]-a[i]);
+    }
+    cout<<k-mi<<endl;
     
     return 0;
 }

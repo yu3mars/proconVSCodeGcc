@@ -16,8 +16,23 @@ int dx4[4] = {1,0,-1,0}, dy4[4] = {0,1,0,-1};
 
 int main()
 {
-    int a,b,c;
-    cin>>a>>b>>c;
+    ll a,b,n;
+    cin>>a>>b>>n;
+    ll x=min(n,b-1);
+    ll ans=(a*x/b)-a*(x/b);
+    cout<<ans<<endl;
+
+    /*
+    ll mx=0;
+    for (int i = 0; i <= n; i++)
+    {
+        ll score = (a*i/b)-a*(i/b);
+        //cout<<i<<"\t"<<score<<endl;
+        mx=max(mx,score);
+    }
+    cout<<mx<<endl;
+    */
+    
     
     return 0;
 }
